@@ -53,7 +53,7 @@ export class IonRouterOutlet implements OnDestroy, OnInit {
     this.nativeEl.swipeHandler = swipe ? {
       canStart: () => this.stackCtrl.canGoBack(1),
       onStart: () => this.stackCtrl.startBackTransition(),
-      onEnd: shouldContinue => this.stackCtrl.endBackTransition(shouldContinue)
+      onEnd: (shouldContinue: boolean) => this.stackCtrl.endBackTransition(shouldContinue)
     } : undefined;
   }
 
