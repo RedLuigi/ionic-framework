@@ -179,7 +179,7 @@ export class IonRouterOutlet implements OnDestroy, OnInit {
 
     let cmpRef: any;
     let enteringView = this.stackCtrl.getExistingView(activatedRoute);
-    if (enteringView) {
+    if (enteringView && (!activatedRoute.routeConfig || !activatedRoute.routeConfig.data || !activatedRoute.routeConfig.data.noReuse)) {
       cmpRef = this.activated = enteringView.ref;
       const saved = enteringView.savedData;
       if (saved) {
